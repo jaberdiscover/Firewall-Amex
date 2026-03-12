@@ -1,0 +1,88 @@
+Id,Name,Shape Library,Shape,Line Source,Line Destination,Label,Notes,Width,Height,Fill Color,Text Color,Line Color,Font Size,Bold,Italic
+1,DIAGRAM 1: Fleet to Management Domain & WLD ESXi,,,,,,DIAGRAM 1,,,,,,,
+10,VCF Ops Fleet Manager,general,process,,,VCF Ops Fleet Manager,Fleet Component,180,50,#2E75B6,#FFFFFF,#1F3864,10,1,0
+11,VCF Operations (VCFO),general,process,,,VCF Operations (VCFO),Fleet Component,180,50,#2E75B6,#FFFFFF,#1F3864,10,1,0
+12,VCF Automation (VCFA),general,process,,,VCF Automation (VCFA),Fleet Component,180,50,#2E75B6,#FFFFFF,#1F3864,10,1,0
+13,VCF Ops for Networks (VON),general,process,,,VCF Ops for Networks (VON),Fleet Component,180,50,#2E75B6,#FFFFFF,#1F3864,10,1,0
+20,SDDC Manager,general,process,,,SDDC Manager,Mgmt Domain,180,50,#1F3864,#FFFFFF,#1F3864,10,1,0
+21,vCenter Server,general,process,,,vCenter Server,Mgmt Domain,180,50,#1F3864,#FFFFFF,#1F3864,10,1,0
+22,NSX Manager,general,process,,,NSX Manager,Mgmt Domain,180,50,#1F3864,#FFFFFF,#1F3864,10,1,0
+23,Identity Broker (VIDB),general,process,,,Identity Broker (VIDB),Mgmt Domain,180,50,#1F3864,#FFFFFF,#1F3864,10,1,0
+24,ESXi Hosts WLD,general,process,,,ESXi Hosts (WLD),WLD,180,50,#375623,#FFFFFF,#375623,10,1,0
+25,ESXi Hosts Mgmt,general,process,,,ESXi Hosts (Mgmt),Mgmt Domain,180,50,#375623,#FFFFFF,#375623,10,1,0
+100,,general,line,10,20,443 TCP | Lifecycle Management,FM-01,,,,,#00B050,,0,0
+101,,general,line,10,21,443 TCP | vCenter Config & Mgmt,FM-03,,,,,#00B050,,0,0
+102,,general,line,10,22,443 TCP | NSX API,FM-04,,,,,#00B050,,0,0
+103,,general,line,10,23,6443/30005/30006 TCP | Control Plane API,FM-09/10/11,,,,,#FF9900,,0,0
+104,,general,line,10,24,443 TCP | HTTPS APIs,FM-07,,,,,#00B050,,0,0
+105,,general,line,11,21,443 TCP + 10443 TCP | vCenter Inventory,VO-07/08,,,,,#00B050,,0,0
+106,,general,line,11,24,443 TCP | Management Ops,VO-09,,,,,#00B050,,0,0
+107,,general,line,11,22,443 TCP | NSX API Metrics,VO-10,,,,,#00B050,,0,0
+108,,general,line,12,21,443 TCP | API + Web Access,VA-01,,,,,#00B050,,0,0
+109,,general,line,12,24,443/902/22 TCP | Console+SSH,VA-02/03/04,,,,,#FF9900,,0,0
+110,,general,line,12,22,443 TCP | NSX Manager API,VA-05,,,,,#00B050,,0,0
+111,,general,line,13,21,2055/4739 TCP | IPFIX Flow,VN-01/02,,,,,#7030A0,,0,0
+112,,general,line,13,22,443 TCP | NSX Inventory+Events,VN-03,,,,,#00B050,,0,0
+200,DIAGRAM 2: Management Domain & WLD ESXi to Fleet,,,,,,DIAGRAM 2,,,,,,,
+30,vCenter Server D2,general,process,,,vCenter Server,Mgmt Domain,180,50,#1F3864,#FFFFFF,#1F3864,10,1,0
+31,NSX Manager D2,general,process,,,NSX Manager,Mgmt Domain,180,50,#1F3864,#FFFFFF,#1F3864,10,1,0
+32,SDDC Manager D2,general,process,,,SDDC Manager,Mgmt Domain,180,50,#1F3864,#FFFFFF,#1F3864,10,1,0
+33,ESXi WLD D2,general,process,,,ESXi Hosts (WLD),WLD,180,50,#375623,#FFFFFF,#375623,10,1,0
+34,ESXi Mgmt D2,general,process,,,ESXi Hosts (Mgmt),Mgmt Domain,180,50,#375623,#FFFFFF,#375623,10,1,0
+40,Fleet Mgr D2,general,process,,,VCF Ops Fleet Manager,Fleet,180,50,#2E75B6,#FFFFFF,#1F3864,10,1,0
+41,VCF Operations D2,general,process,,,VCF Operations (VCFO),Fleet,180,50,#2E75B6,#FFFFFF,#1F3864,10,1,0
+42,VCF Automation D2,general,process,,,VCF Automation (VCFA),Fleet,180,50,#2E75B6,#FFFFFF,#1F3864,10,1,0
+43,VOL D2,general,process,,,VCF Ops for Logs (VOL),Fleet,180,50,#2E75B6,#FFFFFF,#1F3864,10,1,0
+44,VON D2,general,process,,,VCF Ops for Networks (VON),Fleet,180,50,#2E75B6,#FFFFFF,#1F3864,10,1,0
+45,VIDB D2,general,process,,,Identity Broker (VIDB),Fleet,180,50,#2E75B6,#FFFFFF,#1F3864,10,1,0
+300,,general,line,30,40,443 TCP | Core APIs + Lifecycle,MF-01,,,,,#0070C0,,0,0
+301,,general,line,30,41,443/8443 TCP | VCFO API+NodeMgr,MF-02/03,,,,,#0070C0,,0,0
+302,,general,line,30,42,443 TCP | API Bidirectional,MF-04,,,,,#0070C0,,0,0
+303,,general,line,30,43,514/1514 TCP | Syslog+TLS,MF-05/06,,,,,#FF0000,,0,0
+304,,general,line,30,44,2055/4739 UDP | IPFIX Flow,MF-07,,,,,#7030A0,,0,0
+305,,general,line,31,41,443 TCP | NSX API Inventory,MF-08,,,,,#0070C0,,0,0
+306,,general,line,31,43,514/6514 TCP | Syslog+SSL,MF-09/10,,,,,#FF0000,,0,0
+307,,general,line,32,40,443/22 TCP | HTTPS+SSH Fleet Orch,MF-11/12,,,,,#0070C0,,0,0
+308,,general,line,32,42,443/22 TCP | API+SSH,MF-13/14,,,,,#0070C0,,0,0
+309,,general,line,32,41,443/22 TCP | API+SSH,MF-15/16,,,,,#0070C0,,0,0
+310,,general,line,32,43,514/9000/443/9543 TCP | Syslog+API,MF-17/18/19/20,,,,,#FF0000,,0,0
+311,,general,line,32,45,443/22 TCP | VCF SSO API+SSH CRITICAL,MF-21/22,,,,,#FF0000,,0,0
+312,,general,line,33,43,514/1514 TCP | Syslog+TLS,MF-23/24,,,,,#FF0000,,0,0
+313,,general,line,33,44,4739 TCP | IPFIX Flow,MF-25,,,,,#7030A0,,0,0
+314,,general,line,34,43,514/1514 TCP | Mgmt Domain Syslog,MF-26/27,,,,,#FF0000,,0,0
+400,DIAGRAM 3: Fleet to External Services,,,,,,DIAGRAM 3,,,,,,,
+50,Fleet Mgr EXT,general,process,,,VCF Ops Fleet Manager,Fleet,180,50,#2E75B6,#FFFFFF,#1F3864,10,1,0
+51,VCFO EXT,general,process,,,VCF Operations,Fleet,180,50,#2E75B6,#FFFFFF,#1F3864,10,1,0
+52,VIDB EXT,general,process,,,Identity Broker,Fleet,180,50,#2E75B6,#FFFFFF,#1F3864,10,1,0
+60,DNS Server,general,process,,,DNS Server,External,140,50,#7F7F7F,#FFFFFF,#595959,10,1,0
+61,NTP Server,general,process,,,NTP Server,External,140,50,#7F7F7F,#FFFFFF,#595959,10,1,0
+62,AD/LDAP Server,general,process,,,AD / LDAP Server,External,140,50,#7F7F7F,#FFFFFF,#595959,10,1,0
+63,CA Server,general,process,,,CA Certificate Server,External,140,50,#7F7F7F,#FFFFFF,#595959,10,1,0
+64,SFTP Server,general,process,,,SFTP Backup Server,External,140,50,#7F7F7F,#FFFFFF,#595959,10,1,0
+65,IdP Federation,general,process,,,IdP Federation (Okta/ADFS),External,140,50,#7F7F7F,#FFFFFF,#595959,10,1,0
+500,,general,line,50,60,53 TCP/UDP | DNS,EX-01,,,,,#404040,,0,0
+501,,general,line,50,61,123 UDP | NTP,EX-02,,,,,#404040,,0,0
+502,,general,line,51,60,53 TCP/UDP | DNS,EX-03,,,,,#404040,,0,0
+503,,general,line,51,61,123 UDP | NTP,EX-04,,,,,#404040,,0,0
+504,,general,line,51,62,389/636/3268 TCP | LDAP+LDAPS,EX-05/06/07,,,,,#404040,,0,0
+505,,general,line,51,64,22 TCP | SFTP Backup,EX-08,,,,,#C00000,,0,0
+506,,general,line,52,62,389/636 TCP | Directory Lookups,EX-09/10,,,,,#404040,,0,0
+507,,general,line,52,65,443 TCP | SAML/OIDC/Okta,EX-11,,,,,#404040,,0,0
+508,,general,line,52,60,53 TCP/UDP | FQDN Resolution,EX-12,,,,,#404040,,0,0
+509,,general,line,52,61,123 UDP | NTP,EX-13,,,,,#404040,,0,0
+510,,general,line,52,64,22 TCP | External Backup,EX-14,,,,,#C00000,,0,0
+511,,general,line,52,63,443 TCP | SSL Certificate CA,EX-15,,,,,#404040,,0,0
+600,DIAGRAM 4: Route Flow Overview,,,,,,DIAGRAM 4,,,,,,,
+70,Physical Network,general,process,,,Physical Network / ToR Switches,Physical,200,50,#595959,#FFFFFF,#595959,10,1,0
+71,Super Spine,general,process,,,Super Spine,Physical,200,50,#595959,#FFFFFF,#595959,10,1,0
+72,NSX T0 Gateway,general,process,,,NSX T0 Gateway (per AZ),NSX,180,50,#7030A0,#FFFFFF,#7030A0,10,1,0
+73,NSX T1 / DTGW,general,process,,,NSX T1 / DTGW (per AZ),NSX,180,50,#7030A0,#FFFFFF,#7030A0,10,1,0
+74,Fleet Overlay,general,process,,,Fleet Overlay Segment,Fleet,180,50,#2E75B6,#FFFFFF,#1F3864,10,1,0
+75,VLAN 2600,general,process,,,VM Mgmt VLAN 2600,Mgmt,180,50,#1F3864,#FFFFFF,#1F3864,10,1,0
+76,WLD Segments,general,process,,,WLD VPC Segments,WLD,180,50,#375623,#FFFFFF,#375623,10,1,0
+700,,general,line,71,70,BGP | Route Advertisement,RT-23,,,,,#7030A0,,0,0
+701,,general,line,70,72,BGP Peering | Edge→ToR,RT-08,,,,,#7030A0,,0,0
+702,,general,line,72,73,NSX Routing | T0→T1/DTGW,,,,,,#2E75B6,,0,0
+703,,general,line,73,74,NSX Overlay | Fleet Segment,RT-01,,,,,#2E75B6,,0,0
+704,,general,line,70,75,VLAN 2600 | Direct Physical,RT-08,,,,,#1F3864,,0,0
+705,,general,line,73,76,VPC Segments | WLD Workloads,RT-14,,,,,#375623,,0,0
